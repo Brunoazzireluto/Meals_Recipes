@@ -4,26 +4,27 @@ import "./screens/categories_screen.dart";
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  final ThemeData theme = ThemeData(
-    brightness: Brightness.dark
-  );
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'DeliMeals',
-      theme: theme.copyWith(
-        colorScheme: theme.colorScheme.copyWith(
-          primary: Colors.teal,
-          secondary: Colors.lime
-        )
-      )
+      theme: ThemeData(
+          appBarTheme: AppBarTheme(backgroundColor: Colors.teal),
+          primaryColor: Colors.purple,
+          canvasColor: Color.fromRGBO(255, 254, 229, 1),
+          fontFamily: "Raleway",
+          textTheme: ThemeData.light().textTheme.copyWith(
+                  headline6: const TextStyle(
+                fontFamily: "RobotoCondensed",
+                fontSize: 20,
+              ))),
       // theme: ThemeData(
       //   brightness: Brightness.dark,
       //   primarySwatch: Colors.teal,
       //   fontFamily: "Raleway" ,
       //   textTheme: ThemeData.dark().textTheme.copyWith(
       //    titleMedium:  TextStyle(
-      //      fontSize: 
+      //      fontSize:
       //    )
       //   )
 
