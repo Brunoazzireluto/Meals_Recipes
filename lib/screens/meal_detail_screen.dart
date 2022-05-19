@@ -23,7 +23,7 @@ class MealDetailScreen extends StatelessWidget {
       margin: const EdgeInsets.all(10),
       decoration: BoxDecoration(
           color: Colors.white70,
-          border: Border.all(color: Colors.teal, width: 3),
+          border: Border.all(color: Colors.purple, width: 3),
           borderRadius: BorderRadius.circular(10)),
       child: child,
     );
@@ -78,8 +78,8 @@ class MealDetailScreen extends StatelessWidget {
                             backgroundColor: Colors.teal,
                             child: Text(
                               "${index + 1}",
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 16),
+                              style: const TextStyle(
+                                  color: Colors.white, fontSize: 16),
                             ),
                           ),
                           title: Text(

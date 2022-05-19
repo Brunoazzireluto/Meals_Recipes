@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import 'package:meals_recipes/components/main_drawer.dart';
 import 'categories_screen.dart';
 import "favorite_screen.dart";
 
@@ -32,15 +33,15 @@ class _TabsScreenState extends State<TabsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(_titles[_selectedScreenIndex]),
+        title: Center(child: Text(_titles[_selectedScreenIndex])),
       ),
       body: _screens[_selectedScreenIndex],
       bottomNavigationBar: BottomNavigationBar(
-        unselectedItemColor: Colors.white70,
-        selectedItemColor: Colors.purple,
+        unselectedItemColor: Colors.white,
+        selectedItemColor: Colors.teal,
         currentIndex: _selectedScreenIndex,
         onTap: _selecteScreen,
-        backgroundColor: Colors.teal,
+        backgroundColor: Colors.purple,
         items: const [
           BottomNavigationBarItem(
               icon: Icon(Icons.category_rounded), label: "Categorias"),
@@ -48,6 +49,7 @@ class _TabsScreenState extends State<TabsScreen> {
               icon: Icon(Icons.star_rounded), label: "Favoritos"),
         ],
       ),
+      drawer: const MainDrawer(),
     );
   }
 }

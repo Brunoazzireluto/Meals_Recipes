@@ -5,6 +5,8 @@ import "screens/categories_meals_screen.dart";
 import "utils/app-routes.dart";
 import "screens/tabs_screen.dart";
 
+import 'screens/settings_screen.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -14,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'DeliMeals',
       theme: ThemeData(
           brightness: Brightness.dark,
-          appBarTheme: const AppBarTheme(backgroundColor: Colors.teal),
+          appBarTheme: const AppBarTheme(backgroundColor: Colors.purple),
           primaryColor: Colors.purple,
           // canvasColor: const Color.fromRGBO(255, 254, 229, 1),
           fontFamily: "Raleway",
@@ -26,7 +28,8 @@ class MyApp extends StatelessWidget {
       routes: {
         AppRoutes.HOME: (context) => const TabsScreen(),
         AppRoutes.CATEGORIES_MEALS: (context) => const CategoriesMealsScreen(),
-        AppRoutes.MEAL_DETAIL: ((context) => const MealDetailScreen())
+        AppRoutes.MEAL_DETAIL: (context) => const MealDetailScreen(),
+        AppRoutes.SETTINGS: (context) => const SettingsScreen()
       },
       // onGenerateRoute: (settings) {
       //   if (settings.name == "/algo") {
