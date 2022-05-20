@@ -1,10 +1,13 @@
 import "package:flutter/material.dart";
 import 'package:meals_recipes/components/main_drawer.dart';
+import '../models/meals.dart';
 import 'categories_screen.dart';
 import "favorite_screen.dart";
 
 class TabsScreen extends StatefulWidget {
-  const TabsScreen({Key? key}) : super(key: key);
+  final List<Meal> favoriteMeals;
+
+  const TabsScreen({Key? key, required this.favoriteMeals}) : super(key: key);
 
   @override
   State<TabsScreen> createState() => _TabsScreenState();
@@ -13,10 +16,18 @@ class TabsScreen extends StatefulWidget {
 class _TabsScreenState extends State<TabsScreen> {
   int _selectedScreenIndex = 0;
 
-  final List<Widget> _screens = [
-    const CategoriesScreen(),
-    const FavoriteScreen()
-  ];
+  late List<Widget> _screens;
+
+  @override
+  void initState() {
+    super.initState();
+    _screens = [
+      const CategoriesScreen(),
+      FavoriteScreen(
+        favoriteMeals: widget.favoriteMeals,
+      )
+    ];
+  }
 
   final List<String> _titles = [
     'Lista de Categorias',
@@ -33,7 +44,7 @@ class _TabsScreenState extends State<TabsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: Text(_titles[_selectedScreenIndex])),
+        title: Text(_titles[_selectedScreenIndex]),
       ),
       body: _screens[_selectedScreenIndex],
       bottomNavigationBar: BottomNavigationBar(

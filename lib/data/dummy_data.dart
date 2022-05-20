@@ -8,7 +8,7 @@ const DUMMY_CATEGORIES = [
   Category(
     id: 'c1',
     title: 'Italiano',
-    color: Colors.purple,
+    color: Colors.yellow,
   ),
   Category(
     id: 'c2',
@@ -206,7 +206,7 @@ const DUMMY_MEALS = [
     ],
     isGlutenFree: true,
     isVegan: false,
-    isVegetarian: true,
+    isVegetarian: false,
     isLactoseFree: true,
   ),
   Meal(
